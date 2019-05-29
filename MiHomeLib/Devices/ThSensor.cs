@@ -17,8 +17,9 @@ namespace MiHomeLib.Devices
         public float? Temperature { get; private set; }
         public float? Humidity { get; private set;  }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
+            base.ParseData(command);
             var jObject = JObject.Parse(command);
 
             if (jObject["temperature"] != null && float.TryParse(jObject["temperature"].ToString(), out float t))

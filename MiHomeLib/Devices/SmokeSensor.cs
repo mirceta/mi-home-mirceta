@@ -16,8 +16,9 @@ namespace MiHomeLib.Devices
         public bool Alarm { get; private set; }
         public float? Density { get; private set; }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
+            base.ParseData(command);
             var jObject = JObject.Parse(command);
 
             if (jObject["alarm"] != null && bool.TryParse(jObject["alarm"].ToString(), out bool alarm))

@@ -12,7 +12,7 @@ namespace MiHomeLib.Devices
 
         public float? Pressure { get; private set; }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
             base.ParseData(command);
 

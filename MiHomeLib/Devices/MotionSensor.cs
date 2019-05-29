@@ -17,8 +17,9 @@ namespace MiHomeLib.Devices
 
         public int NoMotion { get; set; }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
+            base.ParseData(command);
             var jObject = JObject.Parse(command);
 
             if (jObject["status"] != null)

@@ -18,8 +18,10 @@ namespace MiHomeLib.Devices
         public string StatusLeft { get; private set; }
         public string StatusRight { get; private set; }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
+
+            base.ParseData(command);
             var jObject = JObject.Parse(command);
 
             if (jObject["channel_0"] != null)

@@ -18,8 +18,9 @@ namespace MiHomeLib.Devices
         public string Illumination { get; private set; }
         public string ProtoVersion { get; private set; }
 
-        public override void ParseData(string command)
+        public new void ParseData(string command)
         {
+            base.ParseData(command);
             var jObject = JObject.Parse(command);
 
             if (jObject["rgb"] != null)

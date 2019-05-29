@@ -127,8 +127,9 @@ namespace MiHomeLib
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine(e.StackTrace);
+                    //Console.WriteLine("SOURCE 1\n\n\n");
+                    //Console.WriteLine(e.Message);
+                    //Console.WriteLine(e.StackTrace);
                 }
             }
         }

@@ -1,6 +1,8 @@
-﻿namespace MiHomeLib.Devices
+﻿using System;
+
+namespace MiHomeLib.Devices
 {
-    public abstract class MiHomeDevice
+    public class MiHomeDevice
     {
         public string Sid { get; }
         public string Name { get; set; }
@@ -12,6 +14,9 @@
             Type = type;
         }
 
-        public abstract void ParseData(string command);
+        public void ParseData(string command) {
+            
+            Console.WriteLine(this.GetType().ToString() + ": " + command);
+        }
     }
 }
